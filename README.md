@@ -1,4 +1,4 @@
-# ADDA.PyTorch
+# ADDA.PyTorch-resnet
 Implementation of "Adversarial Discriminative Domain Adapation" in PyTorch
 
 This repo is mostly based on https://github.com/Fujiki-Nakamura/ADDA.PyTorch
@@ -18,7 +18,7 @@ $ python main.py --logdir outputs --trained outputs/best_model.pt --slope 0.2
 
 ## Result
 ### SVHN -> MNIST
-| | Paper | This Repro |
+| | Paper | This Repo |
 | --- | --- | --- |
 | Source only | 0.601 | 0.659 |
 | ADDA | 0.760 | ~0.83 |
