@@ -1,13 +1,13 @@
 # ADDA.PyTorch
 implement Adversarial Discriminative Domain Adapation in PyTorch
 
+This repo is mostly based on https://github.com/Fujiki-Nakamura/ADDA.PyTorch
 
 ## Example
 ```
 $ python train_source.py --logdir outputs
 $ python main.py --logdir outputs --trained outputs/best_model.pt --slope 0.2
 ```
-
 
 ## Result
 ### SVHN -> MNIST
@@ -21,3 +21,4 @@ $ python main.py --logdir outputs --trained outputs/best_model.pt --slope 0.2
 
 ## Resource
 - https://arxiv.org/pdf/1702.05464.pdf
+- https://github.com/Fujiki-Nakamura/ADDA.PyTorch
