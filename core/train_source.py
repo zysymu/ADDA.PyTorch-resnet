@@ -1,14 +1,14 @@
 import argparse
 import os
-
+import sys
+sys.path.append(os.path.abspath('.'))
 from torch import nn, optim
 from torch.utils.data import DataLoader
 from torchvision.datasets import SVHN
 from torchvision import transforms
-
-from models import CNN
-from trainer import train_source_cnn
-from utils import get_logger
+from models.models import CNN
+from core.trainer import train_source_cnn
+from utils.utils import get_logger
 
 
 def main(args):
@@ -17,14 +17,18 @@ def main(args):
     logger = get_logger(os.path.join(args.logdir, 'train_source.log'))
     logger.info(args)
 
+    dataset_root = os.environ["DATASETDIR"]
+
     # data
     source_transform = transforms.Compose([
         transforms.ToTensor()]
     )
+    # source_dataset_train = SVHN(
+    #     dataset_root, 'train', transform=source_transform, download=True)
     source_dataset_train = SVHN(
-        './input', 'train', transform=source_transform, download=True)
+        'input/', 'train', transform=source_transform, download=True)
     source_dataset_test = SVHN(
-        './input', 'test', transform=source_transform, download=True)
+        'input/', 'test', transform=source_transform, download=True)
     source_train_loader = DataLoader(
         source_dataset_train, args.batch_size, shuffle=True,
         drop_last=True,

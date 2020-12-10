@@ -1,5 +1,5 @@
 import argparse
-import experiment
+from core.experiment import run
 
 
 if __name__ == '__main__':
@@ -21,4 +21,4 @@ if __name__ == '__main__':
     parser.add_argument('--logdir', type=str, default='outputs/garbage')
     parser.add_argument('--message', '-m',  type=str, default='')
     args, unknown = parser.parse_known_args()
-    experiment.run(args)
+    run(args)
