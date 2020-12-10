@@ -1,5 +1,5 @@
 # ADDA.PyTorch
-implement Adversarial Discriminative Domain Adapation in PyTorch
+Implementation of "Adversarial Discriminative Domain Adapation" in PyTorch
 
 This repo is mostly based on https://github.com/Fujiki-Nakamura/ADDA.PyTorch
 
