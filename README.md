@@ -6,6 +6,10 @@ This repo is mostly based on https://github.com/Fujiki-Nakamura/ADDA.PyTorch
 ## Note
 Before running the training code, make sure that `DATASETDIR` environment variable is set to dataset directory.
 
+## Environment
+Python 3.8.5
+PyTorch 1.6.0
+
 ## Example
 ```
 $ python train_source.py --logdir outputs
