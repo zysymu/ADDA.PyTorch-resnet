@@ -11,9 +11,16 @@ Before running the training code, make sure that `DATASETDIR` environment variab
 - PyTorch 1.6.0
 
 ## Example
+For training on SVHN-MNIST
 ```
 $ python train_source.py --logdir outputs
 $ python main.py --logdir outputs --trained outputs/best_model.pt --slope 0.2
+```
+
+For training on Office dataset using ResNet-50
+```
+$ python core/train_source_rn50.py --n_classes 31 --logdir outputs
+$ python main.py --n_classes 31 --trained outputs/best_model.pt --logdir outputs --model resnet50 --src-cat amazon --tgt-cat webcam
 ```
 
 ## Result
