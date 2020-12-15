@@ -21,15 +21,21 @@ def main(args):
     # data loaders
     dataset_root = os.environ["DATASETDIR"]
     source_loader = get_office(dataset_root, args.batch_size, args.src_cat)
+    target_loader = get_office(dataset_root, args.batch_size, args.tgt_cat)
 
     # train source CNN
-    source_cnn = CNN(in_channels=args.in_channels).to(args.device)
+    source_cnn = CNN(in_channels=args.in_channels, srcTrain=True).to(args.device)
+    # for param in source_cnn.encoder.parameters():
+    #     param.requires_grad = False
     criterion = nn.CrossEntropyLoss()
+    # optimizer = optim.Adam(
+    #     source_cnn.classifier.parameters(),
+    #     lr=args.lr, weight_decay=args.weight_decay)
     optimizer = optim.Adam(
         source_cnn.parameters(),
         lr=args.lr, weight_decay=args.weight_decay)
     source_cnn = train_source_cnn(
-        source_cnn, source_loader, source_loader,
+        source_cnn, source_loader, target_loader,
         criterion, optimizer, args=args)
 
 
@@ -41,9 +47,9 @@ if __name__ == '__main__':
     parser.add_argument('--trained', type=str, default='')
     parser.add_argument('--slope', type=float, default=0.2)
     # train
-    parser.add_argument('--lr', type=float, default=1e-3)
+    parser.add_argument('--lr', type=float, default=1e-4)
     parser.add_argument('--weight_decay', type=float, default=2.5e-5)
-    parser.add_argument('--epochs', type=int, default=50)
+    parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--batch_size', type=int, default=32)
     # misc
     parser.add_argument('--device', type=str, default='cuda:0')
@@ -52,5 +58,6 @@ if __name__ == '__main__':
     parser.add_argument('--message', '-m',  type=str, default='')
     # office dataset categories
     parser.add_argument('--src_cat', type=str, default='amazon')
+    parser.add_argument('--tgt_cat', type=str, default='webcam')
     args, unknown = parser.parse_known_args()
     main(args)

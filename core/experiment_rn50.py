@@ -33,6 +33,10 @@ def run(args):
     # train target CNN
     target_cnn = CNN(in_channels=args.in_channels, target=True).to(args.device)
     target_cnn.load_state_dict(source_cnn.state_dict())
+    for param in source_cnn.parameters():
+        param.requires_grad = False
+    for param in target_cnn.classifier.parameters():
+        param.requires_grad = False
     discriminator = Discriminator(args=args).to(args.device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(
@@ -40,7 +44,7 @@ def run(args):
         lr=args.lr, betas=args.betas, weight_decay=args.weight_decay)
     d_optimizer = optim.Adam(
         discriminator.parameters(),
-        lr=args.lr, betas=args.betas, weight_decay=args.weight_decay)
+        lr=args.d_lr, betas=args.betas, weight_decay=args.weight_decay)
     train_target_cnn(
         source_cnn, target_cnn, discriminator,
         criterion, optimizer, d_optimizer,

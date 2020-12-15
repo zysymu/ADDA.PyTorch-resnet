@@ -10,7 +10,8 @@ if __name__ == '__main__':
     parser.add_argument('--slope', type=float, default=0.2)
     parser.add_argument('--model', type=str, default='default')
     # train
-    parser.add_argument('--lr', type=float, default=2e-4)
+    parser.add_argument('--lr', type=float, default=1e-5)
+    parser.add_argument('--d_lr', type=float, default=1e-3)
     parser.add_argument('--weight_decay', type=float, default=2.5e-5)
     parser.add_argument('--epochs', type=int, default=500)
     parser.add_argument('--batch_size', type=int, default=32)
