@@ -30,6 +30,12 @@ $ python main.py --n_classes 31 --trained outputs/garbage/best_model.pt --lr 1e-
 | Source only | 0.601 | 0.659 |
 | ADDA | 0.760 | ~0.83 |
 
+### Office-31 Amazon -> Office-31 Webcam
+| | Paper | This Repo |
+| --- | --- | --- |
+| Source only | 0.684 | 0.714 |
+| ADDA | 0.862 | 0.831 |
+
 ## Resource
 - https://arxiv.org/pdf/1702.05464.pdf
 - https://github.com/Fujiki-Nakamura/ADDA.PyTorch
