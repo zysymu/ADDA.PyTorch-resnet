@@ -19,7 +19,7 @@ $ python main.py --logdir outputs --trained outputs/best_model.pt --slope 0.2
 
 For training on Office dataset using ResNet-50
 ```
-$ python core/train_source_rn50.py --n_classes 31 --lr 1e-4 --src_cat amazon --tgt_cat webcam
+$ python core/train_source_rn50.py --n_classes 31 --lr 1e-5 --src_cat amazon --tgt_cat webcam
 $ python main.py --n_classes 31 --trained outputs/garbage/best_model.pt --lr 1e-5 --d_lr 1e-4 --logdir outputs --model resnet50 --src-cat amazon --tgt-cat webcam
 ```
 
