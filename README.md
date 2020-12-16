@@ -27,8 +27,8 @@ $ python main.py --n_classes 31 --trained outputs/garbage/best_model.pt --lr 1e-
 ### SVHN -> MNIST
 | | Paper | This Repo |
 | --- | --- | --- |
-| Source only | 0.601 | 0.659 |
-| ADDA | 0.760 | ~0.83 |
+| Source only | 0.601 | 0.646 |
+| ADDA | 0.760 | 0.805 |
 
 ### Office-31 Amazon -> Office-31 Webcam
 | | Paper | This Repo |
