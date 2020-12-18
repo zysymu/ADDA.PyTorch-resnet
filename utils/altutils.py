@@ -36,6 +36,7 @@ def setLogger(logFilePath):
     logger = logging.getLogger()
     return logger
 
+
 def get_office(dataset_root, batch_size, category):
     """Get Office datasets loader
 
