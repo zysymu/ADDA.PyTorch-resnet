@@ -39,3 +39,5 @@ $ python main.py --n_classes 31 --trained outputs/garbage/best_model.pt --lr 1e-
 ## Resource
 - https://arxiv.org/pdf/1702.05464.pdf
 - https://github.com/Fujiki-Nakamura/ADDA.PyTorch
+- https://github.com/erictzeng/adda/issues/11
+- https://github.com/corenel/pytorch-adda/issues/15
