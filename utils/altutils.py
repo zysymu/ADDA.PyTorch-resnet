@@ -37,7 +37,16 @@ def setLogger(logFilePath):
     return logger
 
 def get_office(dataset_root, batch_size, category):
-    """Get Office datasets loader."""
+    """Get Office datasets loader
+
+    Args:
+        dataset_root (str): path to the dataset folder
+        batch_size (int): batch size
+        category (str): category of Office dataset (amazon, webcam, dslr)
+
+    Returns:
+        obj: dataloader object for Office dataset
+    """    
     # image pre-processing
     pre_process = transforms.Compose([
         transforms.Resize(224),

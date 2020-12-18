@@ -25,12 +25,7 @@ def main(args):
 
     # train source CNN
     source_cnn = CNN(in_channels=args.in_channels, srcTrain=True).to(args.device)
-    # for param in source_cnn.encoder.parameters():
-    #     param.requires_grad = False
     criterion = nn.CrossEntropyLoss()
-    # optimizer = optim.Adam(
-    #     source_cnn.classifier.parameters(),
-    #     lr=args.lr, weight_decay=args.weight_decay)
     optimizer = optim.Adam(
         source_cnn.parameters(),
         lr=args.lr, weight_decay=args.weight_decay)
