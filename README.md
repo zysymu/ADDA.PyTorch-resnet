@@ -1,5 +1,5 @@
 # ADDA.PyTorch-resnet
-Implementation of "Adversarial Discriminative Domain Adaptation" in PyTorch
+Implementation of "Adversarial Discriminative Domain Adaptation" in PyTorch.
 
 This repo is mostly based on https://github.com/Fujiki-Nakamura/ADDA.PyTorch
 
@@ -36,7 +36,7 @@ $ python main.py --n_classes 31 --trained outputs/garbage/best_model.pt --lr 1e-
 | Source only | 0.684 | 0.714 |
 | ADDA | 0.862 | 0.831 |
 
-## Resource
+## Resources
 - https://arxiv.org/pdf/1702.05464.pdf
 - https://github.com/Fujiki-Nakamura/ADDA.PyTorch
 - https://github.com/erictzeng/adda/issues/11
